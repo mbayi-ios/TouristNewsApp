@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.window?.rootViewController = HomeView()
+           // self.window?.rootViewController = OnboardingView()
+            self.window?.rootViewController = UINavigationController(rootViewController:  HomeController())
         }
         
         
