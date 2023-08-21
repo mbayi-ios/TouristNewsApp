@@ -4,6 +4,17 @@
 - using Swift UIKit programatically
 - using SDWebImage to fetch images
 - using MVVM Architecture
+- Using 
+
+## Features
+ - Able to fetch NewsFeeds
+ - Able to display Details of a NewsFeed
+ - Able to fetch Tourists
+ - Able to display Tourist Details
+
+## SDK used 
+Using SDWebImage
+https://github.com/SDWebImage/SDWebImage
 
 screenshots
 | Screenshots      | Screenshots |
