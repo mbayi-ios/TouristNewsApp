@@ -13,9 +13,9 @@
  - Able to display Tourist Details
 
 ## Resources used
-[] News Articles:
+-  News Articles:
  - http://restapi.adequateshop.com/api/Feed/GetNewsFeed
- [] Tourist Profile List:
+-  Tourist Profile List:
  - http://restapi.adequateshop.com/api/Tourist?page=2
 
 - Tourist Profile Details:
