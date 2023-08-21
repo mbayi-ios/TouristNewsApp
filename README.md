@@ -1,9 +1,9 @@
 
 
 ## TouristNewsApp
-using Swift UIKit programatically
-using SDWebImage to fetch images
-using MVVM Architecture
+- using Swift UIKit programatically
+- using SDWebImage to fetch images
+- using MVVM Architecture
 
 screenshots
 | Screenshots      | Screenshots |
