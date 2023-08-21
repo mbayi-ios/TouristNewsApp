@@ -1,4 +1,11 @@
 //
+//  TouristDetailViewController.swift
+//  TouristNews
+//
+//  Created by Ambrose Mbayi on 21/08/2023.
+//
+
+//
 //  ViewNewsController.swift
 //  TouristNews
 //
@@ -7,9 +14,9 @@
 
 import UIKit
 
-class NewsDetailViewController: UIViewController {
+class TouristDetailViewController: UIViewController {
     
-    let viewModel: NewsDetailViewModel
+    let viewModel: TouristDetailViewModel
     
     private let scrollView: UIScrollView = {
        let scrollView  = UIScrollView()
@@ -21,14 +28,14 @@ class NewsDetailViewController: UIViewController {
         return view
     }()
     
-    private let newsImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "questionmark")
-        imageView.tintColor = .label
-        return imageView
-    }()
-    
+//    private let newsImage: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.image = UIImage(systemName: "questionmark")
+//        imageView.tintColor = .label
+//        return imageView
+//    }()
+//
     private let location: UILabel = {
         let label = UILabel()
         label.textColor = .label
@@ -60,7 +67,7 @@ class NewsDetailViewController: UIViewController {
     
     
     
-    init(_ viewModel: NewsDetailViewModel) {
+    init(_ viewModel: TouristDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil , bundle: nil)
     }
@@ -75,23 +82,23 @@ class NewsDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupUI()
-        self.view.backgroundColor = .systemBackground
-        self.navigationItem.title = self.viewModel.news.user?.name
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
-        
-        self.location.text = self.viewModel.news.location
-        self.user.text = self.viewModel.news.user?.name
+//        self.view.backgroundColor = .systemBackground
+//        self.navigationItem.title = self.viewModel.tourists.
+//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
+//        
+//        self.location.text = self.viewModel.news.location
+//        self.user.text = self.viewModel.tourists.user?.name
     }
     
     private func setupUI() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
-        self.contentView.addSubview(newsImage)
+       // self.contentView.addSubview(newsImage)
         self.contentView.addSubview(vStack)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        newsImage.translatesAutoresizingMaskIntoConstraints = false
+       // newsImage.translatesAutoresizingMaskIntoConstraints = false
         vStack.translatesAutoresizingMaskIntoConstraints = false
         
         let height = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)

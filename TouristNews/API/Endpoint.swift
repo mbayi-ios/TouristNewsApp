@@ -11,6 +11,8 @@ import Foundation
 enum Endpoint {
     case fetchNews(url: String = "/api/Feed/GetNewsFeed")
     
+    case fetchTourists(url: String = "/api/Tourist")
+    
     var request: URLRequest? {
         guard let url = self.url else { return nil }
         var request = URLRequest(url: url)
@@ -24,7 +26,6 @@ enum Endpoint {
         var components = URLComponents()
         components.scheme = Constants.scheme 
         components.host = Constants.baseURL
-        components.port = Constants.port
         components.path = self.path
         components.queryItems = self.queryItems
         return components.url
@@ -33,6 +34,8 @@ enum Endpoint {
     private var path: String {
         switch self {
         case .fetchNews(let url):
+            return url
+        case .fetchTourists(let url):
             return url
         }
     }
@@ -43,6 +46,11 @@ enum Endpoint {
             return [
                 URLQueryItem(name: "page", value: "1"),
             ]
+            
+        case .fetchTourists:
+            return [
+                URLQueryItem(name: "page", value: "2")
+            ]
         }
     }
     
@@ -50,12 +58,17 @@ enum Endpoint {
         switch self {
         case .fetchNews:
             return HTTP.Method.get.rawValue
+            
+        case .fetchTourists:
+            return HTTP.Method.get.rawValue
         }
     }
     
     private var httpBody: Data? {
         switch self {
         case .fetchNews:
+            return nil
+        case .fetchTourists:
             return nil
         }
     }
@@ -65,7 +78,7 @@ enum Endpoint {
 extension URLRequest {
     mutating func addValues(for endpoint: Endpoint) {
         switch endpoint {
-        case .fetchNews:
+        case .fetchNews, .fetchTourists:
             self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
             self.setValue(Constants.API_KEY, forHTTPHeaderField: HTTP.Headers.Key.apiKey.rawValue)
         }

@@ -22,7 +22,7 @@ class TabBar: UITabBarController {
     func setup() {
         viewControllers = [
             createNavController(for: NewsFeedViewController(), title: NSLocalizedString("News", comment: ""), image: UIImage(systemName: "newspaper.fill")!),
-            createNavController(for: NewsFeedViewController(), title: NSLocalizedString("Tourists", comment: ""), image: UIImage(systemName: "person.2.circle.fill")!)
+            createNavController(for: TouristsListViewController(), title: NSLocalizedString("Tourists", comment: ""), image: UIImage(systemName: "person.2.circle.fill")!)
         ]
     }
     

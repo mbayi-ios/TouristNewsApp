@@ -46,7 +46,7 @@ class NewsFeedViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.navigationItem.title = "Tour App"
+        self.navigationItem.title = "News Feed"
         self.view.backgroundColor = .systemBackground
         
         self.view.addSubview(tableView)
