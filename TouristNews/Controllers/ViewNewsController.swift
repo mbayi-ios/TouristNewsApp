@@ -51,7 +51,7 @@ class ViewNewsController: UIViewController {
     private lazy var vStack: UIStackView = {
        let vStack = UIStackView(arrangedSubviews: [location, user])
         vStack.axis = .vertical
-        vStack.spacing = 12
+        vStack.spacing = 8
         vStack.distribution = .fill
         vStack.alignment = .center
         
@@ -76,11 +76,11 @@ class ViewNewsController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
         self.view.backgroundColor = .systemBackground
-        self.navigationItem.title = self.viewModel.news.user.name
+        self.navigationItem.title = self.viewModel.news.user?.name
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
         
         self.location.text = self.viewModel.news.location
-        self.user.text = self.viewModel.news.user.name
+        self.user.text = self.viewModel.news.user?.name
     }
     
     private func setupUI() {

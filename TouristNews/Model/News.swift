@@ -7,32 +7,36 @@
 
 import Foundation
 
-struct News {
+struct NewsArray: Decodable {
+    let data: [News]
+}
+
+struct News: Decodable {
     let id: Int
-    let title: String
-    let description: String
-    let location: String
-    let multimedia: [Multimedia]
-    let user : User
-    let commentCount: Int
+    let title: String?
+    let description: String?
+    let location: String?
+    let multimedia: [Multimedia]?
+    let user : User?
+    let commentCount: Int?
     
     
-    struct Multimedia {
-        let id : Int
-        let title: String
-        let name: String
-        let description: String
-        let url: String
+    struct Multimedia: Decodable {
+        let id : Int?
+        let title: String?
+        let name: String?
+        let description: String?
+        let url: String?
     }
     
-    struct User {
-        let userid: Int
-        let name: String
-        let profilePicture: String
+    struct User: Decodable {
+        let userid: Int?
+        let name: String?
+        let profilePicture: String?
     }
 }
 
-
+/*
 extension News {
     public static func getMockArray() -> [News] {
         return [
@@ -40,3 +44,4 @@ extension News {
         ]
     }
 }
+*/

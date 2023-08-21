@@ -8,8 +8,10 @@
 import Foundation
 
 struct Constants {
-    static let API_KEY = ""
-    static let scheme = "https"
+    static let scheme = "http"
     static let baseURL = "restapi.adequateshop.com"
+    static let port: Int? = nil
     static let fullURL = "http://restapi.adequateshop.com/"
+    
+    static let API_KEY = ""
 }
