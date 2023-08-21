@@ -12,6 +12,19 @@
  - Able to fetch Tourists
  - Able to display Tourist Details
 
+## Resources used
+REST APIs source and formats:
+https://www.appsloveworld.com/free-online-sample-rest-api-url-for-testing
+● News Articles:
+http://restapi.adequateshop.com/api/Feed/GetNewsFeed
+● Tourist Profile List:
+http://restapi.adequateshop.com/api/Tourist?page=2
+(Please note there are multiple pages this is just an example. Refer to the REST
+APIs link above)
+● Tourist Profile Details:
+http://restapi.adequateshop.com/api/Tourist/170030
+
+
 ## SDK used 
 Using SDWebImage
 https://github.com/SDWebImage/SDWebImage
