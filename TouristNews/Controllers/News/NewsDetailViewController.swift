@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsDetailViewController: UIViewController {
     
@@ -72,8 +73,7 @@ class NewsDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         setupUI()
         self.view.backgroundColor = .systemBackground
         self.navigationItem.title = self.viewModel.news.user?.name
@@ -81,6 +81,7 @@ class NewsDetailViewController: UIViewController {
         
         self.location.text = self.viewModel.news.location
         self.user.text = self.viewModel.news.user?.name
+        self.newsImage.sd_setImage(with: URL(string: viewModel.news.user?.profilePicture ?? ""), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled"))
     }
     
     private func setupUI() {
@@ -111,6 +112,18 @@ class NewsDetailViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            newsImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            newsImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
+            newsImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            newsImage.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            newsImage.heightAnchor.constraint(equalToConstant: 200),
+            
+            vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            vStack.topAnchor.constraint(equalTo: newsImage.bottomAnchor, constant: 20),
+            vStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
             
         ])
     }

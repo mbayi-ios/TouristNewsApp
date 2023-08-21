@@ -82,12 +82,12 @@ class TouristDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupUI()
-//        self.view.backgroundColor = .systemBackground
-//        self.navigationItem.title = self.viewModel.tourists.
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
-//        
-//        self.location.text = self.viewModel.news.location
-//        self.user.text = self.viewModel.tourists.user?.name
+        self.view.backgroundColor = .systemBackground
+        self.navigationItem.title = self.viewModel.tourists.touristName
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
+        
+        self.location.text = self.viewModel.tourists.touristLocation
+        self.user.text = self.viewModel.tourists.touristName
     }
     
     private func setupUI() {

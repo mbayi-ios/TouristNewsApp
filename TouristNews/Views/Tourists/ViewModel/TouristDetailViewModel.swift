@@ -16,8 +16,4 @@ class TouristDetailViewModel {
     init(_ tourists: Tourists) {
         self.tourists = tourists
     }
-//
-//    var commentCount : String {
-//        return "Comment: \(self.news.commentCount)"
-//    }
 }

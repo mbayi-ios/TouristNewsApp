@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsCell: UITableViewCell {
     static let identifier = "NewsCell"
@@ -15,7 +16,7 @@ class NewsCell: UITableViewCell {
     private let newsImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "questionmark")
+        imageView.image = UIImage(systemName: "photo.on.rectangle.angled")
         imageView.tintColor = .black
         return imageView
     }()
@@ -41,7 +42,8 @@ class NewsCell: UITableViewCell {
     public func configure(with news: News) {
         self.news = news
         
-        self.title.text = news.title
+        self.title.text = news.title ?? "no name"
+        self.newsImage.sd_setImage(with: URL(string: news.user?.profilePicture ?? ""), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled"))
     }
     
     private func setupUI() {

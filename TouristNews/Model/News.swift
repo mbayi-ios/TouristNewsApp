@@ -33,6 +33,12 @@ struct News: Decodable {
         let userid: Int?
         let name: String?
         let profilePicture: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case userid
+            case name
+            case profilePicture = "profilepicture"
+        }
     }
 }
 

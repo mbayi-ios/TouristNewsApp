@@ -14,8 +14,4 @@ class NewsDetailViewModel {
     init(_ news: News) {
         self.news = news
     }
-    
-    var commentCount : String {
-        return "Comment: \(self.news.commentCount)"
-    }
 }

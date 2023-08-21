@@ -37,7 +37,7 @@ class TouristsCell: UITableViewCell {
     public func configure(with tourists: Tourists) {
         self.tourists = tourists
         
-        self.touristName.text = tourists.touristName
+        self.touristName.text = tourists.touristName ?? "no name"
     }
     
     private func setupUI() {
