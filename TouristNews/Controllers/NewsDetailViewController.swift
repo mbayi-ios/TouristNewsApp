@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewNewsController: UIViewController {
+class NewsDetailViewController: UIViewController {
     
-    let viewModel: NewsViewModel
+    let viewModel: NewsDetailViewModel
     
     private let scrollView: UIScrollView = {
        let scrollView  = UIScrollView()
@@ -60,7 +60,7 @@ class ViewNewsController: UIViewController {
     
     
     
-    init(_ viewModel: NewsViewModel) {
+    init(_ viewModel: NewsDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil , bundle: nil)
     }

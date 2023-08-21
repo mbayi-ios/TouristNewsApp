@@ -8,7 +8,7 @@
 import Foundation
 
 
-class HomeViewModel {
+class NewsFeedViewModel {
     var onNewsUpdated: (() -> Void)?
    // var onErrorMessage: (()
     

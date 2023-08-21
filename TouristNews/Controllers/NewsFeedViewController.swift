@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class NewsFeedViewController: UIViewController {
     
     //private let news: [News] = News.getMockArray()
-    private let viewModel: HomeViewModel
+    private let viewModel: NewsFeedViewModel
     
     private let tableView: UITableView = {
      let tableView = UITableView()
@@ -20,7 +20,7 @@ class HomeController: UIViewController {
         return tableView
     }()
     
-    init(_ viewModel: HomeViewModel = HomeViewModel()) {
+    init(_ viewModel: NewsFeedViewModel = NewsFeedViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,7 +62,7 @@ class HomeController: UIViewController {
 }
 
 
-extension HomeController: UITableViewDelegate, UITableViewDataSource {
+extension NewsFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.news.count
     }
@@ -86,9 +86,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         self.tableView.deselectRow(at: indexPath, animated: true)
         
         let news = self.viewModel.news[indexPath.row]
-        let viewModel = NewsViewModel(news)
+        let viewModel = NewsDetailViewModel(news)
         
-        let vc = ViewNewsController(viewModel)
+        let vc = NewsDetailViewController(viewModel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
    

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewsViewModel {
+class NewsDetailViewModel {
     
     let news: News
     
